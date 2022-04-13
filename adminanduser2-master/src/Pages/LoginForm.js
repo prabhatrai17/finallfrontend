@@ -32,6 +32,11 @@ const di={
     width: "350px"
     
 }
+const text={
+  border: "1px solid black",
+  borderRadius: "25px",textAlign:'center',
+  backgroundColor:'#F8EFF4'
+}
 
 
 const LoginForm = ({history}) => {
@@ -140,9 +145,9 @@ const LoginForm = ({history}) => {
       <form className='second'>
          
           <input type="text" id="email" 
-                placeholder="Enter email" name='email'  value={usear.email} onChange= {handleInputs}  autoComplete="off" required/>
+                placeholder="Enter email" name='email'  value={usear.email} onChange= {handleInputs}  autoComplete="off" style={text} required/>
                 <br></br>
-             < input type="password" name='userPassword' value={usear.userPassword} onChange= {handleInputs}  id="password" autoComplete='off'  placeholder="Enter passworld"  required/> 
+             < input type="password" name='userPassword' value={usear.userPassword} onChange= {handleInputs}  id="password" autoComplete='off' style={text}  placeholder="Enter passworld"  required/> 
           
             <br></br>
           

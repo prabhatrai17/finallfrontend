@@ -37,6 +37,11 @@ const di={
     
     
 }
+const text={
+  border: "1px solid black",
+  borderRadius: "25px",textAlign:'center',
+  backgroundColor:'#F8EFF4'
+}
 
 const UserRegis = ({history}) => {
  //let history=useHistory()
@@ -50,6 +55,12 @@ const handleInputs =(e) =>{
     console.log(e);
      name=e.target.name;
      value=e.target.value;
+     if(name==="userMobileNumber")
+     {
+       var num=/[^0-9]/gi;
+       value=e.target.value.replace(num,"")
+      
+     }
 
      setUsear({...usear,[name]:value}) 
 }
@@ -100,15 +111,15 @@ const handleInputs =(e) =>{
              </datalist>
   <br></br> */}
              <input type="text" name='email' id="email" value={usear.email} onChange= {handleInputs}
-             placeholder="Enter email" size="50px" width="100px"   required/><br></br>
+             placeholder="Enter email" size="50px" width="100px" style={text}  required/><br></br>
              <input type="text" id="username" name='userName' value={usear.userName} onChange= {handleInputs}
-             placeholder="Enter Usearname" size="50px" width="100px"   required/><br></br>
-             <input type="text" id="mobileNumber" name='userMobileNumber' value={usear.userMobileNumber} onChange= {handleInputs}
-              maxlength="10" placeholder="Enter mobileNumber" size="50px" width="100px"   required/><br></br>
+             placeholder="Enter Usearname" size="50px" width="100px"  style={text} required/><br></br>
+             <input type="text"  id="mobileNumber" name='userMobileNumber' value={usear.userMobileNumber} onChange= {handleInputs} 
+              maxlength="10" placeholder="Enter mobileNumber" size="50px" width="100px" style={text}  required/><br></br>
              <input type="password" id="password" name='userPassword' value={usear.userPassword} onChange= {handleInputs}
-             placeholder="Enter password" size="50px" width="100px"   required/><br></br>
+             placeholder="Enter password" size="50px" width="100px" style={text}  required/><br></br>
              <input type="password" id="confirmPassword" name='cpassworld' value={usear.cpassworld} onChange= {handleInputs}
-             placeholder="Confirm password" size="50px" width="100px"   required/><br></br>
+             placeholder="Confirm password" size="50px" width="100px" style={text}  required/><br></br>
              <input type="button" id="submitButton"  
               value="Submit" onClick={re} style={butt}/>
                
