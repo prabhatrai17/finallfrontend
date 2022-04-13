@@ -38,7 +38,7 @@ const di={
     
 }
 
-const Regis = ({history}) => {
+const UserRegis = ({history}) => {
  //let history=useHistory()
  
 
@@ -70,14 +70,14 @@ const handleInputs =(e) =>{
            window.location.href="/Login"
          })*/
 
-         fetch("http://localhost:8080/admin/signup",{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(usear)
-           
-      
-        })
-        window.location.href="/Login"
+         fetch("http://localhost:8080/user/signup",{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify(usear)
+         
+    
+      })
+      window.location.href="/UserLogin"
  
       
     }
@@ -120,7 +120,7 @@ const handleInputs =(e) =>{
   )
 }
 
-export default Regis;
+export default UserRegis;
 
 
 

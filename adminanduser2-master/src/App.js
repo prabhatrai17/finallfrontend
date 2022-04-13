@@ -17,10 +17,6 @@ import EditCourse from './AdminPages/EditCourse';
 // import AddCourse from './Pages/AddCourse';
 import ViewCourse from './AdminPages/ViewCourse';
 import StudentInstitute from './UserPages/StudentInstitute';
-
-
-
-
 import{BrowserRouter as Router, Routes,Route,useNavigate, useParams, Outlet} from "react-router-dom";
 import AddCourse from './AdminPages/AddCourse';
 import HeaderStudent from './Components/HeaderStudent';
@@ -40,7 +36,8 @@ import  AdminPrivateRoute from './Pages/adminPrivate';
 import ReviewAdmin from './AdminPages/ReviewAdmin';
 import SuccessEnroll from './UserPages/SuccessEnroll';
 import ReviewForm from './UserPages/ReviewForm';
-
+import UserLogin from './Pages/UserLogin';
+import UserRegis from './Pages/Userregis';
 function App(props) {
   let {id}=useParams();
   
@@ -78,7 +75,9 @@ function App(props) {
       <Router>
       {/* <Header /> */}
         <Routes>
+        <Route path='/UserLogin' exact element={ <UserLogin/> } />
         <Route path='/Login' exact element={ <LoginForm/> } />
+        <Route path='/UserRegister' exact element={ <UserRegis/> } />
        
           <Route path='/Register' exact element={ <Regis/> } />
          {/* <Route path="/" element={<HomePage/>}/>
@@ -149,3 +148,8 @@ function App(props) {
 }
 
 export default App;
+
+
+
+
+
