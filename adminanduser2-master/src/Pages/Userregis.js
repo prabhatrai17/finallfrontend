@@ -88,7 +88,7 @@ const handleInputs =(e) =>{
          
     
       })
-      window.location.href="/UserLogin"
+      window.location.href="/Login"
  
       
     }
@@ -99,7 +99,11 @@ const handleInputs =(e) =>{
   return (
     
       <div className='first' style={di} >
-      <h1 style={heading}> PG Admission Registration </h1> <br></br>
+      <h1 style={heading}> User PG Admission  Registration  </h1> <br></br>
+
+      <h1 style={p} >  For Admin Signin:</h1>
+          
+          <a href="/Register"  id="AdminLink" style={h1} > Admin Signin</a> <br></br>
       
         <form className='second'>
             {/* <label  >

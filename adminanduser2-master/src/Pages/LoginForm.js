@@ -99,23 +99,37 @@ const LoginForm = ({history}) => {
         })
 
 
-        fetch("http://localhost:8080/admin/login")
+       // fetch("http://localhost:8080/admin/login")
         .then((response)=>response.json()
         
         )
         .then((p) => {
-
-        if(p){
+                 
+        //alert(p.role)
+        if(p.role==="ROLE_admin"){
           //  auth.login(()=>{
               //  history.push('user/HomepageStudent')
               //<Navigate to="user/HomepageStudent" />
             //  window.location.href="user/HomepageStudent"
           //  })
-          localStorage.setItem('admin','res.data.user')
+          localStorage.setItem('admin','p')
           window.location.href="admin/ViewInstitute"
       
         }
-           
+        else  if(p.role==="ROLE_student"){
+                    
+          //  auth.login(()=>{
+              //  history.push('user/HomepageStudent')
+              //<Navigate to="user/HomepageStudent" />
+            //  window.location.href="user/HomepageStudent"
+          //  })
+
+          localStorage.setItem('user','p')
+          window.location.href="user/HomepageStudent"
+        }
+        else{
+          alert(p.Error)
+        }
       }
         );
       
@@ -139,9 +153,8 @@ const LoginForm = ({history}) => {
       
     <div className='first' style={di} >
          <h1 style={heading}> PG Admission  </h1>  
-         <h1 style={heading}>Admin Login </h1><br></br>
-         <h1 style={p} >  For user login:</h1>
-          <a href="/UserLogin"  id="AdminLink" style={h1} > User Login</a> <br></br>
+         <h1 style={heading}> Login </h1><br></br>
+        
       <form className='second'>
          
           <input type="text" id="email" 

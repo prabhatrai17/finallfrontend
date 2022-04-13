@@ -1,3 +1,4 @@
+/*
 import React, { useState } from 'react'
 import './Login.css'
 import axios from 'axios'
@@ -75,24 +76,21 @@ const UserLogin = ({history}) => {
 
                  localStorage.setItem('user','res.data.user.userId')
                  window.location.href="user/HomepageStudent"*/
+               
 
-                 fetch("http://localhost:8080/user/login",{
-                  method:"POST",
-                  headers:{"Content-Type":"application/json"},
-                  body:JSON.stringify(usear)
-            
-              })
-
-
-
+/*
                  
-                  fetch("http://localhost:8080/user/login")
+                  //fetch("http://localhost:8080/user/login")
                   .then((response)=>response.json()
                   
                   )
                   .then((p) => {
-
-                  if(p){
+                    let a=[]
+                    a =JSON.stringify(p)
+                  // a=JSON.parse(p);
+                         // alert(p.userId)
+                  if(p.role.equals("ROLE_student")){
+                    
                     //  auth.login(()=>{
                         //  history.push('user/HomepageStudent')
                         //<Navigate to="user/HomepageStudent" />
@@ -101,6 +99,11 @@ const UserLogin = ({history}) => {
    
                     localStorage.setItem('user','p')
                     window.location.href="user/HomepageStudent"
+                  }
+
+
+                  else{
+                    alert(p.Error)
                   }
                      
                 }
@@ -122,7 +125,7 @@ const UserLogin = ({history}) => {
                 }*/
                           
             
-        
+       /* 
          
 
         
@@ -165,4 +168,4 @@ const UserLogin = ({history}) => {
   )
 }
 
-export default  UserLogin
+export default  UserLogin*/

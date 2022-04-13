@@ -99,7 +99,7 @@ const handleInputs =(e) =>{
   return (
     
       <div className='first' style={di} >
-      <h1 style={heading}> PG Admission Registration </h1> <br></br>
+      <h1 style={heading}> Admin PG Admission  Registration </h1> <br></br>
       
         <form className='second'>
             {/* <label  >
@@ -110,6 +110,11 @@ const handleInputs =(e) =>{
                   <option value="Usear"/>
              </datalist>
   <br></br> */}
+                       
+                       <h1 style={p} >  For User Signin:</h1>
+          
+          <a href="/UserRegister"  id="AdminLink" style={h1} > User Signin</a> <br></br>
+                   
              <input type="text" name='email' id="email" value={usear.email} onChange= {handleInputs}
              placeholder="Enter email" size="50px" width="100px" style={text}  required/><br></br>
              <input type="text" id="username" name='userName' value={usear.userName} onChange= {handleInputs}
