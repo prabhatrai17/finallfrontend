@@ -17,7 +17,7 @@ import EditCourse from './AdminPages/EditCourse';
 // import AddCourse from './Pages/AddCourse';
 import ViewCourse from './AdminPages/ViewCourse';
 import StudentInstitute from './UserPages/StudentInstitute';
-import{BrowserRouter as Router, Routes,Route,useNavigate, useParams, Outlet} from "react-router-dom";
+import{BrowserRouter as Router, Routes,Route,useNavigate, useParams, Outlet, Navigate} from "react-router-dom";
 import AddCourse from './AdminPages/AddCourse';
 import HeaderStudent from './Components/HeaderStudent';
 import Course from './UserPages/Course';
@@ -38,6 +38,7 @@ import SuccessEnroll from './UserPages/SuccessEnroll';
 import ReviewForm from './UserPages/ReviewForm';
 import UserLogin from './Pages/UserLogin';
 import UserRegis from './Pages/Userregis';
+import Redirect from './Pages/Redirect';
 function App(props) {
   let {id}=useParams();
   
@@ -112,6 +113,8 @@ function App(props) {
            <Route path="admin/ViewCourse" element={<ViewCourse />} > 
            </Route>
            <Route path="admin/AddUser" element={<AddUser />} > 
+
+           
            </Route>
            <Route path="admin/Reviews" element={<ReviewAdmin/>} > 
            </Route>
@@ -131,12 +134,13 @@ function App(props) {
 
            </ Route>
            
-            <Route path = "*" >
+            <Route path = "*"  element={<Redirect/>}>
+              
             </Route>
             
           
         
-      {/*  <Footer /> */}
+      { /* <Footer /> */}
 
       </Routes>
       </Router>

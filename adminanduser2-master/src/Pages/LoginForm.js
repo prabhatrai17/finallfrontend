@@ -112,7 +112,7 @@ const LoginForm = ({history}) => {
               //<Navigate to="user/HomepageStudent" />
             //  window.location.href="user/HomepageStudent"
           //  })
-          localStorage.setItem('admin','p')
+          localStorage.setItem('admin',p.userId)
           window.location.href="admin/ViewInstitute"
       
         }
@@ -124,7 +124,7 @@ const LoginForm = ({history}) => {
             //  window.location.href="user/HomepageStudent"
           //  })
 
-          localStorage.setItem('user','p')
+          localStorage.setItem('user',p.userId)
           window.location.href="user/HomepageStudent"
         }
         else{

@@ -50,9 +50,13 @@ function HeaderStudent(props) {
                   
                 </div>
                 <div className="nav-profile">
-                  <Account sx={{ fontSize: 35 }} />
-                  <div>Profile</div>
-                </div>
+               
+                  <Account sx={{ fontSize: 35 }}
+                  /> 
+                  
+          <div>User Id:{localStorage.getItem('user') }</div>
+               
+              </div>
               </div>
             </header>
         

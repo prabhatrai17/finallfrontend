@@ -211,6 +211,7 @@ function EnrollPage(){
       const user={courseId,userId,firstName,lastName,mobile,gender,email,fatherName,motherName,eligibility,hscName,hscMarks,
        age,houseNumber,streetNumber,areaName,pinCode,state,nationality}
       console.log(user)
+     // if(localStorage.get(user.role))
       fetch("http://localhost:8080/user/enroll",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
@@ -349,7 +350,7 @@ function EnrollPage(){
                     let value
                     if(!e.target.value.match(letter))
                     {value=""}
-                    setfathername(e.target.value)}}
+                    setfathername(value)}}
                   style={row1} placeholder="enter your father name" id="fatherName"></input>
                   </Grid>
 
@@ -429,7 +430,7 @@ function EnrollPage(){
                     let value
                     if(!e.target.value.match(letter))
                     {value=""}
-                      sethscname(e.target.value)}}
+                      sethscname(value)}}
                  style={row1} placeholder="enter hsc name" id="hscName"></input>
                  </Grid>
                     
@@ -449,14 +450,24 @@ function EnrollPage(){
                   <input className="element" type="text" 
                    autoFocus
                    value={houseNumber}
-                   onChange={(e)=>sethouseno(e.target.value)}
+                   onChange={(e)=>
+                    
+                    {
+                      var num=/[^0-9]/gi;
+                      let value=e.target.value.replace(num,"")
+                      
+
+                      sethouseno(value)}}
                   id="houseNo" name="houseNo"></input> <br></br>
 
                   <label for="streetName">Street Name :</label>
                   <input className="element" type="text"
                    autoFocus
                    value={streetNumber}
-                   onChange={(e)=>setstreetnumber(e.target.value)}
+                   onChange={(e)=>{
+                    var num=/[^0-9]/gi;
+                    let value=e.target.value.replace(num,"")
+                    setstreetnumber(value)}}
                   id="streetName" name="streetName"></input><br></br>
 
                   <label for="areaName">Area Name   :</label>
@@ -470,7 +481,12 @@ function EnrollPage(){
                   <input  type="text" id="pincode" 
                    autoFocus
                    value={pinCode}
-                   onChange={(e)=>setpin(e.target.value)}
+                   onChange={(e)=>
+                    
+                    {
+                      var num=/[^0-9]/gi;
+                      let value=e.target.value.replace(num,"")
+                    setpin(value)}}
                   name="pincode"></input> <br></br>
 
                   <label for="state">State       :</label>
