@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+{/* import React, { useState } from 'react'
 //import { Redirect } from 'react-router-dom'
 import './regis.css'
 //import { useHistory } from 'react-router-dom';
@@ -61,10 +61,19 @@ const handleInputs =(e) =>{
        value=e.target.value.replace(num,"")
       
      }
+     if(name==="userName")
+     {
+       var letter=/^[a-zA-Z]*$/
+       if(!e.target.value.match(letter))
+       value=""
+     }
+     
 
      setUsear({...usear,[name]:value}) 
 }
  
+ 
+
   
     const re = async(event) => {
         event.preventDefault();
@@ -79,9 +88,9 @@ const handleInputs =(e) =>{
             // alert(res.data.message)
            //  history.push('/Login')
            window.location.href="/Login"
-         })*/
+         })
 
-         fetch("http://localhost:8080/user/signup",{
+      {/*   fetch("http://localhost:8080/user/signup",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify(usear)
@@ -113,10 +122,11 @@ const handleInputs =(e) =>{
                  <option value="Admin" />
                   <option value="Usear"/>
              </datalist>
-  <br></br> */}
+  <br></br> 
+  
              <input type="text" name='email' id="email" value={usear.email} onChange= {handleInputs}
              placeholder="Enter email" size="50px" width="100px" style={text}  required/><br></br>
-             <input type="text" id="username" name='userName' value={usear.userName} onChange= {handleInputs}
+             <input type="text" id="username" name='userName' value={usear.userName} onChange= {handleInputs} 
              placeholder="Enter Usearname" size="50px" width="100px"  style={text} required/><br></br>
              <input type="text"  id="mobileNumber" name='userMobileNumber' value={usear.userMobileNumber} onChange= {handleInputs} 
               maxlength="10" placeholder="Enter mobileNumber" size="50px" width="100px" style={text}  required/><br></br>
@@ -132,14 +142,7 @@ const handleInputs =(e) =>{
               
          </form>
       </div>
-  )
-}
-
-export default UserRegis;
-
-
-
-
-
+)
+  // */}
 
 

@@ -34,8 +34,8 @@ function StudentInstitute(props) {
       <div className='filter1'>Filter By</div>
         
         <Button variant="outlined" > Location</Button>
-        <Button variant="outlined" > Institute</Button>
-        <Button variant="outlined" > Course</Button>
+       {/* <Button variant="outlined" > Institute</Button>
+        <Button variant="outlined" > Course</Button> */}
       </div>
     </div>
 

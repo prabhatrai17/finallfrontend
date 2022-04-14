@@ -202,6 +202,8 @@ function EnrollPage(){
     const[pinCode,setpin]=useState('')
     const[state,setstate]=useState('')
     const[nationality,setnationality]=useState('')
+    
+
 
     
     const handleOnSubmit=(e)=>{
@@ -232,7 +234,14 @@ function EnrollPage(){
                   <input type="text" style={row1}
                     autoFocus
                     value={userId}
-                    onChange={(e)=>setuserid(e.target.value)}
+                    onChange={(e)=>{
+
+                      var num=/[^0-9]/gi;
+                     let value=e.target.value.replace(num,"")
+                      setuserid(value)
+                    //  setuserid(e.target.value)
+                    }
+                    }
                   placeholder="enter userId" id="userId"></input>
                   </Grid>
 
@@ -241,7 +250,15 @@ function EnrollPage(){
                   <input type="text"  
                    autoFocus
                    value={courseId}
-                   onChange={(e)=>setcourseid(e.target.value)}
+                   onChange={(e)=>
+                    
+                    {
+                      var num=/[^0-9]/gi;
+                      let value=e.target.value.replace(num,"")
+                      
+                      setcourseid(value)
+                    
+                    }}
                   style={row1} placeholder="enter courseId" id="courseId"></input>
                   </Grid>
 
@@ -281,7 +298,14 @@ function EnrollPage(){
                   <input type="text" style={row1}
                     autoFocus
                     value={firstName}
-                    onChange={(e)=>setfname(e.target.value)}
+                    onChange={(e)=>
+                      {
+                        var letter=/^[a-zA-Z]*$/
+                        let value
+                        if(!e.target.value.match(letter))
+                        {value=""}
+                        
+                        setfname(value)}}
                   placeholder="enter your first name" id="firstName"></input>
                   </Grid>
 
@@ -290,7 +314,12 @@ function EnrollPage(){
                   <input type="text"  
                    autoFocus
                    value={lastName}
-                   onChange={(e)=>setlname(e.target.value)}
+                   onChange={(e)=>
+                    { var letter=/^[a-zA-Z]*$/
+                    let value
+                    if(!e.target.value.match(letter))
+                    {value=""}
+                    setlname(value)}}
                   style={row1} placeholder="enter your last name" id="lastName"></input>
                   </Grid>
 
@@ -299,7 +328,12 @@ function EnrollPage(){
                   <input type="text"
                    autoFocus
                    value={gender}
-                   onChange={(e)=>setgender(e.target.value)}
+                   onChange={(e)=>{
+                    var letter=/^[a-zA-Z]*$/
+                    let value
+                    if(!e.target.value.match(letter))
+                    {value=""}
+                    setgender(e.target.value)}}
                   style={row1} placeholder="enter male or female" id="male/female"></input>
                   </Grid>
                </Grid>
@@ -310,7 +344,12 @@ function EnrollPage(){
                   <input type="text"
                    autoFocus
                    value={fatherName}
-                   onChange={(e)=>setfathername(e.target.value)}
+                   onChange={(e)=>{
+                    var letter=/^[a-zA-Z]*$/
+                    let value
+                    if(!e.target.value.match(letter))
+                    {value=""}
+                    setfathername(e.target.value)}}
                   style={row1} placeholder="enter your father name" id="fatherName"></input>
                   </Grid>
 
@@ -318,7 +357,11 @@ function EnrollPage(){
                   <input type="text" 
                    autoFocus
                    value={mobile}
-                   onChange={(e)=>setmobile(e.target.value)}
+                   onChange={(e)=>
+                    {
+                      var num=/[^0-9]/gi;
+                      let value=e.target.value.replace(num,"")
+                      setmobile(value)}}
                   style={row1} placeholder="enter phone number" id="phoneNumber1"></input>
                   </Grid >
 
@@ -326,7 +369,11 @@ function EnrollPage(){
                   <input style={row1} type="text"
                       autoFocus
                       value={age}
-                      onChange={(e)=>setage(e.target.value)}
+                      onChange={(e)=>
+                        {
+                          var num=/[^0-9]/gi;
+                          let value=e.target.value.replace(num,"")
+                        setage(value)}}
                      placeholder="enter your age" id="age"></input>
 
 
@@ -346,7 +393,13 @@ function EnrollPage(){
                   <input style={row1} type="text" 
                    autoFocus
                    value={motherName}
-                   onChange={(e)=>setmothername(e.target.value)}
+                   onChange={(e)=>
+                    {
+                      var letter=/^[a-zA-Z]*$/
+                      let value
+                      if(!e.target.value.match(letter))
+                      {value=""}
+                      setmothername(value)}}
                   placeholder="enter your mother name" id="motherName"></input>  
                   </Grid>
 
@@ -371,7 +424,12 @@ function EnrollPage(){
                  <input type="text"
                   autoFocus
                   value={hscName}
-                  onChange={(e)=>sethscname(e.target.value)}
+                  onChange={(e)=>
+                    {  var letter=/^[a-zA-Z]*$/
+                    let value
+                    if(!e.target.value.match(letter))
+                    {value=""}
+                      sethscname(e.target.value)}}
                  style={row1} placeholder="enter hsc name" id="hscName"></input>
                  </Grid>
                     
@@ -419,7 +477,15 @@ function EnrollPage(){
                   <input className="element" type="text"
                    autoFocus
                    value={state}
-                   onChange={(e)=>setstate(e.target.value)}
+                   onChange={(e)=>
+                    
+                    {
+                      var letter=/^[a-zA-Z]*$/
+                      let value
+                      if(!e.target.value.match(letter))
+                      {value=""}
+                      
+                      setstate(value)}}
                   id="state" name="state"></input>
                   
                   <label  for="nationality">Nationality :</label>
@@ -446,7 +512,10 @@ function EnrollPage(){
                  <input type="text" 
                   autoFocus
                   value={hscMarks}
-                  onChange={(e)=>sethscmarks(e.target.value)}
+                  onChange={(e)=>{
+                    var num=/[^0-9]/gi;
+                          let value=e.target.value.replace(num,"")
+                    sethscmarks(value)}}
                  style={row1} placeholder="enter hsc marks" id="hscMarks"></input>
                  </Grid >
 

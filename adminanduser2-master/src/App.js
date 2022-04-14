@@ -75,9 +75,9 @@ function App(props) {
       <Router>
       {/* <Header /> */}
         <Routes>
-        <Route path='/UserLogin' exact element={ <UserLogin/> } />
+        
         <Route path='/Login' exact element={ <LoginForm/> } />
-        <Route path='/UserRegister' exact element={ <UserRegis/> } />
+        
        
           <Route path='/Register' exact element={ <Regis/> } />
          {/* <Route path="/" element={<HomePage/>}/>

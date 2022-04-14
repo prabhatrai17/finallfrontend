@@ -48,7 +48,7 @@ const Regis = ({history}) => {
  
 
   const[usear,setUsear]=useState({
-    email:"",userName:"",userMobileNumber:"",userPassword:"",cpassworld:""
+   use:"", email:"",userName:"",userMobileNumber:"",userPassword:"",cpassworld:""
 });
   let name,value;
 const handleInputs =(e) =>{
@@ -61,6 +61,12 @@ const handleInputs =(e) =>{
        value=e.target.value.replace(num,"")
       
      }
+     if(name==="userName")
+     {
+       var letter=/^[a-zA-Z]*$/
+       if(!e.target.value.match(letter))
+       value=""
+     }
 
      setUsear({...usear,[name]:value}) 
 }
@@ -68,10 +74,10 @@ const handleInputs =(e) =>{
   
     const re = async(event) => {
         event.preventDefault();
-        const{email,userName,userMobileNumber,userPassword,cpassworld} =usear
+        const{use,email,userName,userMobileNumber,userPassword,cpassworld} =usear
 
       
-       if( email && userName &&userMobileNumber && userPassword &&cpassworld &&(userPassword===cpassworld) ){
+       if( use &&email && userName &&userMobileNumber && userPassword &&cpassworld &&(userPassword===cpassworld) ){
        // history.push('/user/login')
        
       /* axios.post('http:/8080/admin/signup',usear)
@@ -80,7 +86,10 @@ const handleInputs =(e) =>{
            //  history.push('/Login')
            window.location.href="/Login"
          })*/
+          
+         
 
+         if(use==="Admin"){
          fetch("http://localhost:8080/admin/signup",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -89,7 +98,20 @@ const handleInputs =(e) =>{
       
         })
         window.location.href="/Login"
+      }
+      else if(use==="User"){
+
+        fetch("http://localhost:8080/user/signup",{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify(usear)
+         
+    
+      })
+      window.location.href="/Login"
  
+      
+      }
       
     }
     else alert('invalid input')
@@ -99,21 +121,21 @@ const handleInputs =(e) =>{
   return (
     
       <div className='first' style={di} >
-      <h1 style={heading}> Admin PG Admission  Registration </h1> <br></br>
+      <h1 style={heading}>  PG Admission  Registration </h1> <br></br>
       
         <form className='second'>
-            {/* <label  >
-                 <input list="adminUsear" name='use' placeholder="Enter admin/user"  value={usear.use} onChange= {handleInputs} style={labe}/>
+             <label  >
+                 <input list="adminUsear" name='use' placeholder="Enter admin/user"  value={usear.use} onChange= {handleInputs} style={text}/>
              </label>
              <datalist id="adminUsear" >
                  <option value="Admin" />
-                  <option value="Usear"/>
+                  <option value="User"/>
              </datalist>
-  <br></br> */}
+  <br></br> 
                        
-                       <h1 style={p} >  For User Signin:</h1>
+                    {/*   <h1 style={p} >  For User Signin:</h1>
           
-          <a href="/UserRegister"  id="AdminLink" style={h1} > User Signin</a> <br></br>
+  <a href="/UserRegister"  id="AdminLink" style={h1} > User Signin</a> <br></br> */}
                    
              <input type="text" name='email' id="email" value={usear.email} onChange= {handleInputs}
              placeholder="Enter email" size="50px" width="100px" style={text}  required/><br></br>
