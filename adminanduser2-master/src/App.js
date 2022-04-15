@@ -134,15 +134,17 @@ function App(props) {
 
            </ Route>
            
-            <Route path = "*"  element={<Redirect/>}>
-              
-            </Route>
-            
           
+            
+           <Route path = "*"  element={<Redirect/>}>
+              
+              </Route>
         
-      { /* <Footer /> */}
+       
 
       </Routes>
+      <Footer /> 
+
       </Router>
     
       

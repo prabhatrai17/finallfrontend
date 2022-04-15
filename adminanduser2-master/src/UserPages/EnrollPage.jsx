@@ -465,9 +465,8 @@ function EnrollPage(){
                    autoFocus
                    value={streetNumber}
                    onChange={(e)=>{
-                    var num=/[^0-9]/gi;
-                    let value=e.target.value.replace(num,"")
-                    setstreetnumber(value)}}
+                    
+                    setstreetnumber(e.target.value)}}
                   id="streetName" name="streetName"></input><br></br>
 
                   <label for="areaName">Area Name   :</label>

@@ -77,7 +77,7 @@ const handleInputs =(e) =>{
         const{use,email,userName,userMobileNumber,userPassword,cpassworld} =usear
 
       
-       if( use &&email && userName &&userMobileNumber && userPassword &&cpassworld &&(userPassword===cpassworld) ){
+       if( use &&email && userName &&userMobileNumber && userPassword &&cpassworld &&(userPassword===cpassworld) &&userMobileNumber.length===10 ){
        // history.push('/user/login')
        
       /* axios.post('http:/8080/admin/signup',usear)
