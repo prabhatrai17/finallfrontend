@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import HeaderStudent from '../Components/HeaderStudent';
 import "./SuccessEnroll.css"
 
-function SuccessEnroll(props) {
+function SuccessEnroll(value1) {
    
     return (
         <div >

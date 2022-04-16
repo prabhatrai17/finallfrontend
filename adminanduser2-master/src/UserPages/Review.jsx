@@ -4,7 +4,7 @@ import "./Review.css"
 
 
 
-function Review(props) {
+function Review(value1) {
   
 const [data,setData]=useState([]);
 
@@ -13,7 +13,7 @@ useEffect(()=>{
 },[]);
 
 function getusers(courseId){
-  fetch(`http://localhost:8080/getReviewsByCourseId/`)
+  fetch(value1.value1+`getReviewsByCourseId/`)
   .then((response)=>response.json())
   .then((p) => setData(p)
        

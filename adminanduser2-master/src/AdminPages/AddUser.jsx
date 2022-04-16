@@ -8,7 +8,7 @@ import { padding } from '@mui/system';
 import Add from '@mui/icons-material/Add';
 import{BrowserRouter as Router, Routes,Route,Link,Outlet,} from "react-router-dom";
 
-function AddUser(){
+function AddUser(value1){
     let row1={
         marginTop:"15px",
         padding:"10px",
@@ -76,7 +76,9 @@ function AddUser(){
       const user={courseId,userId,firstName,lastName,mobile,gender,email,fatherName,motherName,eligibility,hscName,hscMarks,
        age,houseNumber,streetNumber,areaName,pinCode,state,nationality}
       console.log(user)
-      fetch("http://localhost:8080/user/enroll",{
+      if(courseId && userId&&firstName && lastName && mobile && gender && email && fatherName && motherName && eligibility && hscName && hscMarks &&
+        age &&houseNumber &&streetNumber && areaName && pinCode && state && nationality){
+      fetch(value1.value1+"user/enroll",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(user)
@@ -85,6 +87,10 @@ function AddUser(){
       window.location.href="/admin/DisplayUser"
  
     })
+  }
+  else{
+    alert("No empty filled allowed")
+  }
   }
 
 

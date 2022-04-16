@@ -43,7 +43,7 @@ const text={
     backgroundColor:'#F8EFF4'
 }
 
-const Regis = ({history}) => {
+const Regis = ({value1}) => {
  //let history=useHistory()
  
 
@@ -90,7 +90,7 @@ const handleInputs =(e) =>{
          
 
          if(use==="Admin"){
-         fetch("http://localhost:8080/admin/signup",{
+         fetch( value1.value1+"admin/signup",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(usear)
@@ -101,7 +101,7 @@ const handleInputs =(e) =>{
       }
       else if(use==="User"){
 
-        fetch("http://localhost:8080/user/signup",{
+        fetch(value1.value1+"user/signup",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify(usear)

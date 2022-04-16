@@ -29,7 +29,7 @@ import {Table,TableHead,TableRow,TableBody} from '@mui/material';
 
 
 
-const DisplayUser=(props)=>{
+const DisplayUser=(value1)=>{
 
 
 
@@ -40,7 +40,7 @@ const DisplayUser=(props)=>{
   },[]);
   
   function getadmission(){
-    fetch("http://localhost:8080/admin/getAllAdmissionRequests")
+    fetch(value1.value1+"admin/getAllAdmissionRequests")
     .then((response)=>response.json())
     .then((p) => setData(p)
          
@@ -83,7 +83,7 @@ const DisplayUser=(props)=>{
 function deleteadmission(admissionId)
 {
   // alert(id)
-  fetch(`http://localhost:8080/admin/deleteAdmission?admissionId=${admissionId}`,{
+  fetch(value1.value1+`admin/deleteAdmission?admissionId=${admissionId}`,{
     method:'DELETE'
   }).then((response)=>{
     response.json().then((resp)=>{

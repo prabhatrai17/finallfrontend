@@ -141,7 +141,7 @@ import Add from '@mui/icons-material/Add';
 import{BrowserRouter as Router, Routes,Route,Link,Outlet,} from "react-router-dom";
 import HeaderStudent from "../Components/HeaderStudent";
 
-function EnrollPage(){
+function EnrollPage(value1){
     let row1={
         marginTop:"15px",
         padding:"10px",
@@ -211,8 +211,10 @@ function EnrollPage(){
       const user={courseId,userId,firstName,lastName,mobile,gender,email,fatherName,motherName,eligibility,hscName,hscMarks,
        age,houseNumber,streetNumber,areaName,pinCode,state,nationality}
       console.log(user)
+      if(courseId && userId&&firstName && lastName && mobile && gender && email && fatherName && motherName && eligibility && hscName && hscMarks &&
+        age &&houseNumber &&streetNumber && areaName && pinCode && state && nationality){
      // if(localStorage.get(user.role))
-      fetch("http://localhost:8080/user/enroll",{
+      fetch(value1.value1+"user/enroll",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(user)
@@ -221,6 +223,10 @@ function EnrollPage(){
       window.location.href="/user/Success"
  
     })
+  }
+  else{
+    alert("No empty filled allowed")
+  }
   }
 
 

@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom'
 //import { Redirect } from 'react-router-dom'
 
 
+
 const p={
     fontSize: "10px",
     marginTop:"5px",
@@ -39,7 +40,10 @@ const text={
 }
 
 
-const LoginForm = ({history}) => {
+const LoginForm = (value1) => {
+  
+
+
  const[usear,setUsear]=useState({
         email:"",userPassword:""
     })
@@ -89,9 +93,12 @@ const LoginForm = ({history}) => {
                           
             }
         )*/
-         
+        // const host="http://localhost:8080/"
+        
+        //  let link ="admin/login"
+        //  alert(value1.value1)
    
-        fetch("http://localhost:8080/admin/login",{
+        fetch(value1.value1+"admin/login",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(usear)
@@ -169,7 +176,9 @@ const LoginForm = ({history}) => {
           <a href="/Register"  id="signupLink" style={h1} > Sign up</a>  
           
       </form>
+      
     </div>
+    
   
   )
 }

@@ -4,7 +4,7 @@ import "../UserPages/Review.css"
 
 
 
-function ReviewAdmin(courseId) {
+function ReviewAdmin({courseId},{value1}) {
   
 const [data,setData]=useState([]);
 
@@ -13,7 +13,7 @@ useEffect(()=>{
 },[]);
 
 function getusers(){
-  fetch(`http://localhost:8080/getReviewsByCourseId/${courseId}`)
+  fetch(value1.value1+`getReviewsByCourseId/${courseId}`)
   .then((response)=>response.json())
   .then((p) => setData(p)
        

@@ -13,7 +13,7 @@ import axios from "axios";
 
 
 
-function EditCourse(props) {
+function EditCourse(value1) {
     // const [users,setUsers]=useState([]);
     const [courseName,setname]=useState("");
     const [courseDescription,setdescription]=useState("");
@@ -96,7 +96,7 @@ useEffect(()=>{
 const update=()=>{
     let item=(courseName,courseDuration,courseDescription,courseTiming,courseStudentCount,courseAcademicYear,courseRequiredPercentage)
     console.warn(item);
-    fetch(`http://localhost:8080/admin/editCourse/${courseId}`,{
+    fetch(value1.value1+`admin/editCourse/${courseId}`,{
         method:'PUT',
         // headers:{
         //     "Accept":"application/json",

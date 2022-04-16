@@ -32,7 +32,7 @@ import { BackspaceOutlined, CountertopsOutlined, DeleteForeverOutlined, EditAttr
 
 
 
-const ViewCourse=(props)=>{
+const ViewCourse=(value1)=>{
 
   // const [courseName,setname]=useState("");
   //   const [courseDescription,setdescription]=useState("");
@@ -54,7 +54,7 @@ const ViewCourse=(props)=>{
   },[]);
   
   function getusers(){
-    fetch("http://localhost:8080/admin/viewCourses")
+    fetch(value1.value1+"admin/viewCourses")
     .then((response)=>response.json())
     .then((p) => setData(p)
          
@@ -65,7 +65,7 @@ const ViewCourse=(props)=>{
   function deleteUser(courseId)
   {
     // alert(id)
-    fetch(`http://localhost:8080/admin/deleteCourse/${courseId}`,{
+    fetch(value1.value1+`admin/deleteCourse/${courseId}`,{
       method:'DELETE'
     }).then((response)=>{
       response.json().then((resp)=>{

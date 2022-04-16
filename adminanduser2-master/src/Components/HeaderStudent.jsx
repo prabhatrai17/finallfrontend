@@ -88,13 +88,29 @@ function HeaderStudent(props) {
                       </Link>
                       </grid>
 
-                       <grid item xs={4} md={4}   className="grid1">
+                       {/* <grid item xs={4} md={4}   className="grid1">
                     <Link to="/user/ReviewForm"  style={{color:"white", textDecoration:"none"} } underline='none'>
                       <IconButton className="options-below-nav-items options-courses" id="userEnrolledCourses" edge="start"  ariel-label="menu" sx={{mr:2}}>AddReview</IconButton>
                       </Link>
-                      </grid> 
+                      </grid>  */}
                     
-                  
+                    <grid item xs={4} md={4} className="grid1">
+                <Link
+                  to="/user/EnrolledCourses"
+                  style={{ color: "white", textDecoration: "none" }}
+                  underline="none"
+                >
+                  <IconButton
+                    className="options-below-nav-items options-courses"
+                    id="userEnrolledCourses"
+                    edge="start"
+                    ariel-label="menu"
+                    sx={{ mr: 2 }}
+                  >
+                    Enrolled Courses
+                  </IconButton>
+                </Link>
+              </grid>
                    
                    
         

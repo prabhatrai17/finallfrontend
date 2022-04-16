@@ -12,7 +12,7 @@ import{BrowserRouter as Router, Routes,Route,Link,Outlet,} from "react-router-do
 
 
 
-function AddCourse(props) { 
+function AddCourse(value1) { 
 
    const[courseName,setname]=useState('')
    const[courseDescription,setdescription]=useState('')
@@ -39,7 +39,8 @@ function AddCourse(props) {
      e.preventDefault()
      const user={courseName,courseDescription,courseStudentCount,instituteId,courseDuration,courseTiming,courseRequiredPercentage,courseAcademicYear}
      console.log(user)
-     fetch("http://localhost:8080/admin/addCourse",{
+     if(courseName && courseDescription && courseStudentCount &&instituteId &&courseDuration &&courseTiming &&courseRequiredPercentage && courseAcademicYear)
+    { fetch(value1.value1+"admin/addCourse",{
        method:"POST",
        headers:{"Content-Type":"application/json"},
        body:JSON.stringify(user)
@@ -48,6 +49,10 @@ function AddCourse(props) {
      window.location.href="/admin/ViewCourse"
 
    })
+}
+else{
+   alert("No empty filled allowed")
+}
  }
 
 
@@ -60,14 +65,24 @@ function AddCourse(props) {
           <input type="text" className="row1"
            autoFocus
            value={courseName}
-           onChange={(e)=>setname(e.target.value)}
+           onChange={(e)=>
+            {
+
+               var letter=/^[a-zA-Z]*$/
+               let value
+               if(!e.target.value.match(letter))
+               {value=""}
+            setname(value)}}
           placeholder="Enter the course name" id="courseName"></input>
           </Grid>
           <Grid className='row1'>
           <input type="text"  className='row1'
            autoFocus
            value={courseStudentCount}
-           onChange={(e)=>setcount(e.target.value)}
+           onChange={(e)=>
+            { var num=/[^0-9]/gi;
+            let value=e.target.value.replace(num,"")
+            setcount(value)}}
           placeholder="Enter no of student enrolled for the Courses" id="courseEnrolled"></input>
           </Grid>
           
@@ -79,7 +94,10 @@ function AddCourse(props) {
           <input type="text" className='row1'
            autoFocus
            value={courseDuration}
-           onChange={(e)=>setduration(e.target.value)}
+           onChange={(e)=>{
+            var num=/[^0-9]/gi;
+            let value=e.target.value.replace(num,"")
+            setduration(value)}}
           placeholder="Enter the course duration" id="courseDuration"></input>
           </Grid>
 
@@ -88,7 +106,11 @@ function AddCourse(props) {
           <input className='row1'
              autoFocus
              value={courseRequiredPercentage}
-             onChange={(e)=>setpercentage(e.target.value)}
+             onChange={(e)=>
+               {
+                  var num=/[^0-9]/gi;
+                  let value=e.target.value.replace(num,"")
+                  setpercentage(value)}}
           placeholder="Enter the course percentage" id="courseRequiredpercentage"></input>
           </Grid>
          
@@ -105,7 +127,12 @@ function AddCourse(props) {
           <input type="text" className='row1'
            autoFocus
            value={courseAcademicYear}
-           onChange={(e)=>setyear(e.target.value)}
+           onChange={(e)=>
+            
+            { var num=/[^0-9]/gi;
+            let value=e.target.value.replace(num,"")
+               
+               setyear(value)}}
           placeholder="Enter the course Year" id="courseYear"></input>
           </Grid>
 
@@ -138,7 +165,11 @@ function AddCourse(props) {
           <input type="text" className='row1'
            autoFocus
            value={instituteId}
-           onChange={(e)=>setinstituteid(e.target.value)}
+           onChange={(e)=>
+            
+            { var num=/[^0-9]/gi;
+            let value=e.target.value.replace(num,"")
+               setinstituteid(value)}}
           placeholder="Enter the instituteId" id="instituteid"></input>
           </Grid>
           
@@ -150,7 +181,13 @@ function AddCourse(props) {
           <textarea className='row1'
              autoFocus
              value={courseDescription}
-             onChange={(e)=>setdescription(e.target.value)}
+             onChange={(e)=>
+               {
+                  var letter=/^[a-zA-Z]*$/
+                  let value
+                  if(!e.target.value.match(letter))
+                  {value=""}
+                  setdescription(value)}}
           placeholder="Enter the course description" id="courseDescription"></textarea>
           </Grid>
        </Grid> 

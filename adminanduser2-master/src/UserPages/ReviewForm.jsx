@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import { getListSubheaderUtilityClass } from "@mui/material";
 import HeaderStudent from "../Components/HeaderStudent";
 
-function ReviewForm(props) {
+function ReviewForm(value1) {
   const[userId,setuserid]=useState('')
   const[courseId,setcourseid]=useState('')
   const[starRating,setrating]=useState('')
@@ -23,7 +23,7 @@ function ReviewForm(props) {
     e.preventDefault()
     const user={courseId,userId,message,starRating}
     console.log(user)
-    fetch("http://localhost:8080/user/addReview",{
+    fetch(value1.value1+"user/addReview",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify(user)
