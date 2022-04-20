@@ -43,7 +43,7 @@ const text={
     backgroundColor:'#F8EFF4'
 }
 
-const Regis = ({value1}) => {
+const Regis = (value1) => {
  //let history=useHistory()
  
 
@@ -100,6 +100,7 @@ const handleInputs =(e) =>{
         window.location.href="/Login"
       }
       else if(use==="User"){
+        alert(value1.value1)
 
         fetch(value1.value1+"user/signup",{
           method:"POST",

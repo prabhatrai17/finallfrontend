@@ -76,8 +76,7 @@ function AddUser(value1){
       const user={courseId,userId,firstName,lastName,mobile,gender,email,fatherName,motherName,eligibility,hscName,hscMarks,
        age,houseNumber,streetNumber,areaName,pinCode,state,nationality}
       console.log(user)
-      if(courseId && userId&&firstName && lastName && mobile && gender && email && fatherName && motherName && eligibility && hscName && hscMarks &&
-        age &&houseNumber &&streetNumber && areaName && pinCode && state && nationality){
+      
       fetch(value1.value1+"user/enroll",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
@@ -87,10 +86,7 @@ function AddUser(value1){
       window.location.href="/admin/DisplayUser"
  
     })
-  }
-  else{
-    alert("No empty filled allowed")
-  }
+  
   }
 
 
@@ -175,7 +171,7 @@ function AddUser(value1){
                     onChange={(e)=>
                       {
                         var letter=/^[a-zA-Z]*$/
-                        let value
+                        let value=e.target.value
                         if(!e.target.value.match(letter))
                         {value=""}
                         
@@ -190,7 +186,7 @@ function AddUser(value1){
                    value={lastName}
                    onChange={(e)=>
                     { var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                     setlname(value)}}
@@ -204,7 +200,7 @@ function AddUser(value1){
                    value={gender}
                    onChange={(e)=>{
                     var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                     setgender(e.target.value)}}
@@ -220,7 +216,7 @@ function AddUser(value1){
                    value={fatherName}
                    onChange={(e)=>{
                     var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                     setfathername(value)}}
@@ -270,7 +266,7 @@ function AddUser(value1){
                    onChange={(e)=>
                     {
                       var letter=/^[a-zA-Z]*$/
-                      let value
+                      let value=e.target.value
                       if(!e.target.value.match(letter))
                       {value=""}
                       setmothername(value)}}
@@ -300,7 +296,7 @@ function AddUser(value1){
                   value={hscName}
                   onChange={(e)=>
                     {  var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                       sethscname(value)}}
@@ -369,7 +365,7 @@ function AddUser(value1){
                     
                     {
                       var letter=/^[a-zA-Z]*$/
-                      let value
+                      let value=e.target.value
                       if(!e.target.value.match(letter))
                       {value=""}
                       

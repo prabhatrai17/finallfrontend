@@ -39,8 +39,9 @@ function AddCourse(value1) {
      e.preventDefault()
      const user={courseName,courseDescription,courseStudentCount,instituteId,courseDuration,courseTiming,courseRequiredPercentage,courseAcademicYear}
      console.log(user)
-     if(courseName && courseDescription && courseStudentCount &&instituteId &&courseDuration &&courseTiming &&courseRequiredPercentage && courseAcademicYear)
-    { fetch(value1.value1+"admin/addCourse",{
+    if(courseName && courseDescription && courseStudentCount && instituteId && courseDuration && courseTiming && courseRequiredPercentage &&courseAcademicYear)
+    { 
+    fetch(value1.value1+"admin/addCourse",{
        method:"POST",
        headers:{"Content-Type":"application/json"},
        body:JSON.stringify(user)
@@ -50,9 +51,11 @@ function AddCourse(value1) {
 
    })
 }
-else{
-   alert("No empty filled allowed")
+else 
+{
+   alert("Fileds can't be empty")
 }
+
  }
 
 
@@ -69,7 +72,7 @@ else{
             {
 
                var letter=/^[a-zA-Z]*$/
-               let value
+               let value=e.target.value
                if(!e.target.value.match(letter))
                {value=""}
             setname(value)}}
@@ -184,7 +187,7 @@ else{
              onChange={(e)=>
                {
                   var letter=/^[a-zA-Z]*$/
-                  let value
+                  let value=e.target.value
                   if(!e.target.value.match(letter))
                   {value=""}
                   setdescription(value)}}

@@ -37,7 +37,7 @@ function EditAcademy(value1) {
             value={name}
             onChange={(e) => {
               var letter = /^[a-zA-Z]*$/;
-              let value;
+              let value=e.target.value;
               if (!e.target.value.match(letter)) {
                 value = "";
               }

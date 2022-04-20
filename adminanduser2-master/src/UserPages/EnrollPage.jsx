@@ -308,10 +308,9 @@ function EnrollPage(value1){
                     onChange={(e)=>
                       {
                         var letter=/^[a-zA-Z]*$/
-                        let value
+                        let value=e.target.value
                         if(!e.target.value.match(letter))
                         {value=""}
-                        
                         setfname(value)}}
                   placeholder="enter your first name" id="firstName"></input>
                   </Grid>
@@ -323,7 +322,7 @@ function EnrollPage(value1){
                    value={lastName}
                    onChange={(e)=>
                     { var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                     setlname(value)}}
@@ -337,7 +336,7 @@ function EnrollPage(value1){
                    value={gender}
                    onChange={(e)=>{
                     var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                     setgender(e.target.value)}}
@@ -353,7 +352,7 @@ function EnrollPage(value1){
                    value={fatherName}
                    onChange={(e)=>{
                     var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                     setfathername(value)}}
@@ -403,7 +402,7 @@ function EnrollPage(value1){
                    onChange={(e)=>
                     {
                       var letter=/^[a-zA-Z]*$/
-                      let value
+                      let value=e.target.value
                       if(!e.target.value.match(letter))
                       {value=""}
                       setmothername(value)}}
@@ -433,7 +432,7 @@ function EnrollPage(value1){
                   value={hscName}
                   onChange={(e)=>
                     {  var letter=/^[a-zA-Z]*$/
-                    let value
+                    let value=e.target.value
                     if(!e.target.value.match(letter))
                     {value=""}
                       sethscname(value)}}
@@ -502,7 +501,7 @@ function EnrollPage(value1){
                     
                     {
                       var letter=/^[a-zA-Z]*$/
-                      let value
+                      let value=e.target.value
                       if(!e.target.value.match(letter))
                       {value=""}
                       

@@ -38,13 +38,13 @@ function AddAcademy(value1) {
     };
     console.log(user);
 
-    if( instituteName&&
-      instituteDescription&&
-      instituteState&&
-      instituteCity&&
-      instituteEmail&&
-      instituteMobile&&
-      nirfRank){
+  if( instituteName &&
+    instituteDescription &&
+    instituteState &&
+    instituteCity &&
+    instituteEmail &&
+    instituteMobile &&
+    nirfRank){
     fetch(value1.value1+"admin/addInstitute", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -52,10 +52,12 @@ function AddAcademy(value1) {
     }).then(() => {
       window.location.href = "/admin/ViewInstitute";
     });
+  
   }
-  else{
-    alert("No empty filled allowed")
-  }
+  else 
+{
+   alert("Fileds can't be empty")
+}
   };
 
   return (
@@ -72,7 +74,7 @@ function AddAcademy(value1) {
             value={instituteName}
             onChange={(e) => {
               var letter = /^[a-zA-Z]*$/;
-              let value;
+              let value=e.target.value;
               if (!e.target.value.match(letter)) {
                 value = "";
               }
@@ -107,7 +109,7 @@ function AddAcademy(value1) {
             value={instituteState}
             onChange={(e) => {
               var letter = /^[a-zA-Z]*$/;
-              let value;
+              let value=e.target.value;
               if (!e.target.value.match(letter)) {
                 value = "";
               }
@@ -148,7 +150,7 @@ function AddAcademy(value1) {
             //onChange={(e) => setcity(e.target.value)}
             onChange={(e) => {
               var letter = /^[a-zA-Z]*$/;
-              let value;
+              let value=e.target.value;
               if (!e.target.value.match(letter)) {
                 value = "";
               }
@@ -167,7 +169,7 @@ function AddAcademy(value1) {
             value={instituteDescription}
             onChange={(e) => {
               var letter = /^[a-zA-Z]*$/;
-              let value;
+              let value=e.target.value;
               if (!e.target.value.match(letter)) {
                 value = "";
               }

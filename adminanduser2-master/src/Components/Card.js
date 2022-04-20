@@ -93,17 +93,11 @@ function Card(props) {
     </Grid>
                   
 
-
-
-
-
-
-
   <Grid style={{marginLeft:"25%"}}>
   
   <div  > 
   <Link to="/admin/Reviews"  style={{color:"white", textDecoration:"none"} } underline='none'>
-    <Button style={{marginLeft:"60px",marginBottom:"10px",zIndex:-1}} startIcon={<Reviews/>}>Reviews</Button>
+    {/* <Button style={{marginLeft:"60px",marginBottom:"10px",zIndex:-1}} startIcon={<Reviews/>}>Reviews</Button> */}
     </Link>
     </div>
  
